@@ -13,7 +13,7 @@ ARG USER_GID=$USER_UID
 USER $USERNAME
 
 # Install packages and Go language server
-# RUN go install golang.org/x/tools/gopls@latest 2>&1
+RUN go install golang.org/x/tools/gopls@latest 2>&1
 
 # Set up workspace
 WORKDIR /workspace
