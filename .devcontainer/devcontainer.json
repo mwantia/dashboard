@@ -3,7 +3,6 @@
     "build": {
         "dockerfile": "Dockerfile"
     },
-    "appPort": 9080,
     "customizations": {
         "vscode": {
             "extensions": [
@@ -25,7 +24,7 @@
     "containerEnv": {
         "LANG": "de_DE.UTF-8"
     },
-    "forwardPorts": [9080],
+    "forwardPorts": [9050],
     "features": {
         "ghcr.io/devcontainers/features/git:1": {
             "version": "latest",
@@ -34,6 +33,5 @@
         "ghcr.io/devcontainers/features/docker-in-docker:2": {}
     },
     "mounts": ["source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"],
-    "runArgs": ["--add-host=host.docker.internal:host-gateway"],
-    "postStartCommand": "make serve"
+    "runArgs": ["--add-host=host.docker.internal:host-gateway"]
 }
