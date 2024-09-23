@@ -3,7 +3,7 @@ services:
     container_name: dashboard
     build: .
     ports:
-      - "9100:9100"
+      - "9000:9000"
     environment:
       - GIN_MODE=release
       - ACL_TOKEN=Admin

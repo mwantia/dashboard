@@ -26,5 +26,6 @@
             "version": "latest",
             "ppa": "false"
         }
-    }
+    },
+    "postStartCommand": "make serve"
 }

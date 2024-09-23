@@ -1,0 +1,29 @@
+# .air.toml
+root = "."
+tmp_dir = "tmp"
+
+[build]
+cmd = "templ generate && go build -o ./tmp/main ./cmd/server/main.go"
+bin = "tmp/main"
+include_ext = ["go", "js", "tpl", "tmpl", "templ", "css", "html", "json"]
+include_dir = ["src", "go", "templates"]
+exclude_dir = ["tmp", "vendor"]
+exclude_regex = [".*_templ.go"]
+delay = 1000 # ms
+
+[log]
+time = false
+
+[color]
+main = "magenta"
+watcher = "cyan"
+build = "yellow"
+runner = "green"
+
+[proxy]
+app_port = 9000
+enabled = true
+proxy_port = 9001
+
+[misc]
+clean_on_exit = true

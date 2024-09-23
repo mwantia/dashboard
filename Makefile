@@ -18,7 +18,7 @@ clean:
 	rm -f ./build/$(BINARY_NAME)
 
 serve:
-	$(MAKE) -j serve-tailwindcss serve-templ serve-air
+	@air -c .air.toml
 
 help:
 	@echo "Available commands:"

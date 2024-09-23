@@ -34,7 +34,7 @@ COPY --from=builder /app/dashboard .
 COPY --from=builder /app/src ./src
 
 # Expose port 9100
-EXPOSE 9100
+EXPOSE 9000
 
 # Run the binary
 CMD ["./dashboard"]

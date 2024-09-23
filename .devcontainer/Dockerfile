@@ -14,7 +14,5 @@ USER $USERNAME
 
 # Install packages and Go language server
 RUN go install golang.org/x/tools/gopls@latest 2>&1
+RUN go install github.com/air-verse/air@latest
 RUN go install github.com/a-h/templ/cmd/templ@latest
-
-# Expose ports
-EXPOSE 9100
