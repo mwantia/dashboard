@@ -1,6 +1,8 @@
 {
     "name": "Dashboard",
-    "dockerFile": "Dockerfile",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
     "appPort": 9100,
     "customizations": {
         "vscode": {
@@ -20,12 +22,17 @@
             }
         }
     },
+    "containerEnv": {
+        "LANG": "de_DE.UTF-8"
+    },
     "forwardPorts": [9100],
     "features": {
         "ghcr.io/devcontainers/features/git:1": {
             "version": "latest",
             "ppa": "false"
-        }
+        },
+        "ghcr.io/devcontainers/features/docker-in-docker:2": {}
     },
-    "mounts": ["source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"]
+    "mounts": ["source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"],
+    "runArgs": ["--add-host=host.docker.internal:host-gateway"]
 }
