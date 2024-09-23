@@ -23,7 +23,7 @@ runner = "green"
 [proxy]
 app_port = 9000
 enabled = true
-proxy_port = 9001
+proxy_port = 9080
 
 [misc]
 clean_on_exit = true
