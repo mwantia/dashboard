@@ -2,6 +2,24 @@ package layout
 
 templ Main() {
     <html lang="en">
-
+        <head>
+            <meta charset="UTF-8">
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+            <title>Dashboard</title>
+            <!-- JS, CSS Scripts and Links -->
+            <link rel="icon" type="image/x-icon" href="/static/favicon.ico">
+            <link rel="stylesheet" href="/static/css/pico.min.css">
+            <link rel="stylesheet" href="/static/css/pico.custom.css">
+            <!-- Alpine.js | Persist | Htmx -->
+            <script defer src="https://cdn.jsdelivr.net/npm/@alpinejs/persist@3.x.x/dist/cdn.min.js"></script>
+            <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+            <script defer src="https://unpkg.com/htmx.org@2.0.2" crossorigin="anonymous"></script>
+            <!-- Custom Scripts -->
+            <script src="/static/js/iconify.min.js"></script>
+            <script src="/static/js/alpine.main.js"></script>
+        </head>
+        <body id="body">
+            { children... }
+        </body>
     </html>
 }

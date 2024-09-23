@@ -29,7 +29,15 @@ func Main() templ.Component {
 			templ_7745c5c3_Var1 = templ.NopComponent
 		}
 		ctx = templ.ClearChildren(ctx)
-		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<html lang=\"en\"></html>")
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("<html lang=\"en\"><head><meta charset=\"UTF-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1.0\"><title>Dashboard</title><!-- JS, CSS Scripts and Links --><link rel=\"icon\" type=\"image/x-icon\" href=\"/static/favicon.ico\"><link rel=\"stylesheet\" href=\"/static/css/pico.min.css\"><link rel=\"stylesheet\" href=\"/static/css/pico.custom.css\"><!-- Alpine.js | Persist | Htmx --><script defer src=\"https://cdn.jsdelivr.net/npm/@alpinejs/persist@3.x.x/dist/cdn.min.js\"></script><script defer src=\"https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js\"></script><script defer src=\"https://unpkg.com/htmx.org@2.0.2\" crossorigin=\"anonymous\"></script><!-- Custom Scripts --><script src=\"/static/js/iconify.min.js\"></script><script src=\"/static/js/alpine.main.js\"></script></head><body id=\"body\">")
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		templ_7745c5c3_Err = templ_7745c5c3_Var1.Render(ctx, templ_7745c5c3_Buffer)
+		if templ_7745c5c3_Err != nil {
+			return templ_7745c5c3_Err
+		}
+		_, templ_7745c5c3_Err = templ_7745c5c3_Buffer.WriteString("</body></html>")
 		if templ_7745c5c3_Err != nil {
 			return templ_7745c5c3_Err
 		}

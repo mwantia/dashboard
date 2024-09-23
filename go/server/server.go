@@ -5,7 +5,17 @@ import "github.com/gin-gonic/gin"
 func Start() {
 	r := SetupRouter()
 	// Health Setup
-	SetupHealth(r)
+	if err := SetupHealth(r); err != nil {
+		panic(err)
+	}
+	// API Setup
+	if err := SetupApi(r); err != nil {
+		panic(err)
+	}
+	// HTTP Setup
+	if err := SetupHttp(r); err != nil {
+		panic(err)
+	}
 	// Start listening and serving requests
 	if err := r.Run(":9000"); err != nil {
 		panic(err)
