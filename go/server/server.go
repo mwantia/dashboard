@@ -7,7 +7,9 @@ func Start() {
 	// Health Setup
 	SetupHealth(r)
 	// Start listening and serving requests
-	r.Run(":9000")
+	if err := r.Run(":9000"); err != nil {
+		panic(err)
+	}
 }
 
 func SetupRouter() *gin.Engine {
