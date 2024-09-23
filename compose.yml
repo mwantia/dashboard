@@ -1,0 +1,9 @@
+services:
+  dashboard:
+    container_name: dashboard
+    build: .
+    ports:
+      - "9100:9100"
+    environment:
+      - GIN_MODE=release
+      - ACL_TOKEN=Admin
