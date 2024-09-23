@@ -7,7 +7,7 @@ FROM ${GO_IMAGE}:${GO_VERSION}-${ALPINE_VERSION}
 # Install docker dependencies
 VOLUME /var/run/docker.sock
 RUN apt -yqq update && apt -yqq install docker.io
-RUN usermod -g docker vscode
+RUN usermod -aG docker vscode
 
 # Update non-root user
 ARG USERNAME=vscode
