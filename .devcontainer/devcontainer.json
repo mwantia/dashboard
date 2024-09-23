@@ -30,16 +30,10 @@
         "ghcr.io/devcontainers/features/git:1": {
             "version": "latest",
             "ppa": "false"
-<<<<<<< HEAD
-        }
-    },
-    "postStartCommand": "make serve"
-}
-=======
         },
         "ghcr.io/devcontainers/features/docker-in-docker:2": {}
     },
     "mounts": ["source=/var/run/docker.sock,target=/var/run/docker.sock,type=bind"],
-    "runArgs": ["--add-host=host.docker.internal:host-gateway"]
+    "runArgs": ["--add-host=host.docker.internal:host-gateway"],
+    "postStartCommand": "make serve"
 }
->>>>>>> 2c64f9a84a2f88b4d972803caa84b0fc47c99908

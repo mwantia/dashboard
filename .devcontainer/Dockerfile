@@ -1,7 +1,7 @@
 ARG GO_VERSION=1.23
 ARG GO_IMAGE=mcr.microsoft.com/devcontainers/go
 ARG ALPINE_VERSION=bookworm
-# Use golang devcontainer as base
+
 FROM ${GO_IMAGE}:${GO_VERSION}-${ALPINE_VERSION}
 
 # Install dependencies
@@ -9,10 +9,6 @@ RUN apt update \
     && apt install -yqq jq \
     && apt clean -yqq
 
-# Install docker dependencies
-VOLUME /var/run/docker.sock
-RUN apt -yqq update && apt -yqq install docker.io
-RUN usermod -aG docker vscode
 # Update non-root user
 ARG USERNAME=vscode
 ARG USER_UID=1000
