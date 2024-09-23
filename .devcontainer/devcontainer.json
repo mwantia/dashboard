@@ -3,7 +3,7 @@
     "build": {
         "dockerfile": "Dockerfile"
     },
-    "appPort": 9100,
+    "appPort": 9080,
     "customizations": {
         "vscode": {
             "extensions": [
@@ -25,7 +25,7 @@
     "containerEnv": {
         "LANG": "de_DE.UTF-8"
     },
-    "forwardPorts": [9100],
+    "forwardPorts": [9080],
     "features": {
         "ghcr.io/devcontainers/features/git:1": {
             "version": "latest",
